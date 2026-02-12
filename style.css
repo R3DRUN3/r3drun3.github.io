@@ -81,7 +81,7 @@ body {
 
 .name {
     font-family: 'Space Mono', monospace;
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-size: clamp(1rem, 2vw, 1.5rem);
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
