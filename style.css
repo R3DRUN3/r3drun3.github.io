@@ -5,13 +5,13 @@
     --accent-secondary: #4f46e5;
     --text-primary: #e6e6e6;
     --text-secondary: #a0a0a0;
+    --glass-bg: rgba(10, 12, 16, 0.6);
 }
 
 * {
     margin: 0;
     padding: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
@@ -21,16 +21,11 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     min-height: 100vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
+
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
 }
 
 .particles {
@@ -62,15 +57,10 @@ body {
     z-index: 0;
     opacity: 0.15;
     background: 
-        -o-radial-gradient(0% 0%, circle, var(--accent-secondary) 0%, transparent 50%),
-        -o-radial-gradient(100% 100%, circle, var(--accent-primary) 0%, transparent 50%);
-    background: 
         radial-gradient(circle at 0% 0%, var(--accent-secondary) 0%, transparent 50%),
         radial-gradient(circle at 100% 100%, var(--accent-primary) 0%, transparent 50%);
-    -webkit-filter: blur(80px);
-            filter: blur(80px);
-    -webkit-animation: backgroundFloat 15s ease-in-out infinite alternate;
-            animation: backgroundFloat 15s ease-in-out infinite alternate;
+    filter: blur(80px);
+    animation: backgroundFloat 15s ease-in-out infinite alternate;
 }
 
 .container {
@@ -79,17 +69,14 @@ body {
     text-align: center;
     padding: clamp(1rem, 5vw, 3rem);
     width: clamp(280px, 90vw, 800px);
+    max-height: 90vh;
+    overflow-y: auto;
     background: var(--glass-bg);
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     border-radius: clamp(10px, 2vw, 20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    -webkit-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    -webkit-animation: fadeIn 1s ease-out;
-            animation: fadeIn 1s ease-out;
-    overflow-y: auto;
-    max-height: 90vh;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
 }
 
 .name {
@@ -97,12 +84,9 @@ body {
     font-size: clamp(2rem, 4vw, 2.5rem);
     font-weight: 700;
     margin-bottom: 0.5rem;
-    position: relative;
     color: var(--text-primary);
     letter-spacing: 2px;
     text-shadow: 0 0 10px rgba(54, 211, 153, 0.3);
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
@@ -114,7 +98,7 @@ body {
 }
 
 .name::after {
-    content: '/\200B>'; /* zero width space as firefox changes it to an arrow */
+    content: '/\200B>';
     color: var(--accent-primary);
     opacity: 0.6;
     margin-left: 0.5rem;
@@ -126,8 +110,7 @@ body {
     color: var(--accent-primary);
     margin-bottom: clamp(1rem, 3vw, 1.5rem);
     opacity: 0;
-    -webkit-animation: fadeIn 1s ease-out 0.3s forwards;
-            animation: fadeIn 1s ease-out 0.3s forwards;
+    animation: fadeIn 1s ease-out 0.3s forwards;
     font-family: 'Space Mono', monospace;
 }
 
@@ -137,25 +120,18 @@ body {
     margin: 0 auto clamp(1rem, 3vw, 1.5rem);
     color: var(--text-secondary);
     opacity: 0;
-    -webkit-animation: fadeIn 1s ease-out 0.6s forwards;
-            animation: fadeIn 1s ease-out 0.6s forwards;
+    animation: fadeIn 1s ease-out 0.6s forwards;
     padding: 0 clamp(0.5rem, 2vw, 1rem);
 }
 
 .badges {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: clamp(0.5rem, 2vw, 1rem);
     margin: clamp(1rem, 4vw, 2rem) 0;
     opacity: 0;
-    -webkit-animation: fadeIn 1s ease-out 0.8s forwards;
-            animation: fadeIn 1s ease-out 0.8s forwards;
+    animation: fadeIn 1s ease-out 0.8s forwards;
 }
 
 .badge {
@@ -167,132 +143,81 @@ body {
     font-size: clamp(0.8rem, 2.5vw, 0.9rem);
     color: var(--accent-primary);
     border: 1px solid rgba(54, 211, 153, 0.2);
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    -ms-touch-action: none;
-        touch-action: none;
+    touch-action: none;
 }
 
 .badge:hover {
     background: rgba(54, 211, 153, 0.2);
-    -webkit-transform: translateY(-2px);
-        -ms-transform: translateY(-2px);
-            transform: translateY(-2px);
+    transform: translateY(-2px);
 }
 
 .socials {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     gap: clamp(1rem, 3vw, 1.5rem);
     margin-top: clamp(1rem, 4vw, 2rem);
     opacity: 0;
-    -webkit-animation: fadeIn 1s ease-out 0.9s forwards;
-            animation: fadeIn 1s ease-out 0.9s forwards;
+    animation: fadeIn 1s ease-out 0.9s forwards;
 }
 
 .link {
     color: var(--text-secondary);
     font-size: clamp(1.2rem, 4vw, 1.5rem);
     text-decoration: none;
-    -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    -o-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     padding: clamp(0.3rem, 1.5vw, 0.5rem);
     position: relative;
     border-radius: 50%;
-    -ms-touch-action: manipulation;
-        touch-action: manipulation;
 }
 
 .link::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
     border-radius: 50%;
     background: var(--accent-primary);
     opacity: 0;
-    -webkit-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-            transform: scale(0.8);
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
+    transform: scale(0.8);
     transition: all 0.3s ease;
 }
 
 .link:hover {
     color: var(--accent-primary);
-    -webkit-transform: translateY(-3px);
-        -ms-transform: translateY(-3px);
-            transform: translateY(-3px);
+    transform: translateY(-3px);
 }
 
 .link:hover::before {
     opacity: 0.1;
-    -webkit-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-            transform: scale(1.2);
-}
-
-@-webkit-keyframes fadeIn {
-    from { opacity: 0; -webkit-transform: translateY(20px); transform: translateY(20px); }
-    to { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+    transform: scale(1.2);
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; -webkit-transform: translateY(20px); transform: translateY(20px); }
-    to { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
-}
-
-@-webkit-keyframes backgroundFloat {
-    0% {
-        -webkit-transform: scale(1) rotate(0deg);
-                transform: scale(1) rotate(0deg);
-    }
-    50% {
-        -webkit-transform: scale(1.1) rotate(5deg);
-                transform: scale(1.1) rotate(5deg);
-    }
-    100% {
-        -webkit-transform: scale(1) rotate(0deg);
-                transform: scale(1) rotate(0deg);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes backgroundFloat {
-    0% {
-        -webkit-transform: scale(1) rotate(0deg);
-                transform: scale(1) rotate(0deg);
-    }
-    50% {
-        -webkit-transform: scale(1.1) rotate(5deg);
-                transform: scale(1.1) rotate(5deg);
-    }
-    100% {
-        -webkit-transform: scale(1) rotate(0deg);
-                transform: scale(1) rotate(0deg);
-    }
+    0% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(5deg); }
+    100% { transform: scale(1) rotate(0deg); }
 }
 
+/* Mobile adjustments */
 @media (max-width: 768px) {
-    .container {
-        padding: 2rem;
-        margin: 1rem;
-    }
-    
-    .description {
-        font-size: 1rem;
+    body {
+        display: block;
+        padding: 1rem;
     }
 
-    .badge {
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+    .container {
+        width: 100%;
+        max-height: none;
+        overflow-y: visible;
+        padding: 1.5rem;
+    }
+
+    .description {
+        font-size: 1rem;
     }
 }
