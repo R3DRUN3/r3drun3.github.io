@@ -204,9 +204,9 @@ const particleSystem = new ParticleSystem(".particles", {
 });
 
 // dev
-document.addEventListener('touchmove', (e) => {
+/* document.addEventListener('touchmove', (e) => {
     e.preventDefault();
 }, { passive: false });
 
 
-particleSystem.init();
+particleSystem.init(); */
